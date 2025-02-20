@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Drivers</h2>
+@if(driverStandings$|async; as driverStandings) {
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Position</th>
+        <th scope="col">Name</th>
+        <th scope="col">Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(driverStanding of driverStandings; track driverStanding.position) {
+        <tr>
+          <td>{{driverStanding.position}}</td>
+          <td>{{driverStanding.Driver.givenName}} {{driverStanding.Driver.familyName}}</td>
+          <td>{{driverStanding.points}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+</div>
